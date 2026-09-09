@@ -10,4 +10,7 @@ export const studentData = {
   city: 'Delhi',
   dob: '01 Jan 1990',
   subjects: 'Maths' as const,
+
+ 
+
 };
