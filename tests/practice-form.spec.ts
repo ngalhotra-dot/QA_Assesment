@@ -13,18 +13,15 @@ test('Successful Registration', async ({ page }) => {
     await practiceFormPage.selectGender(page, studentData.gender);
     await practiceFormPage.mobile(page).fill(studentData.mobile);
     await practiceFormPage.selectHobby(page, studentData.hobby);
-
-
-
-
-
-
     await practiceFormPage.selectState(studentData.state, page);
-
-
     await practiceFormPage.selectCity(studentData.city, page);
-
     await practiceFormPage.currentAddress(page).fill(studentData.address);
+    await practiceFormPage.dob(page).click();
+    await practiceFormPage.dob(page).fill(studentData.dob);
+    await practiceFormPage.dob(page).press('Enter');
+    await practiceFormPage.subjects(page).click();
+    await practiceFormPage.subjects(page).fill(studentData.subjects);
+    await practiceFormPage.subjects(page).press('Enter');
     await practiceFormPage.submitButton(page).click();
     await practiceFormPage.verifySubmission(page);
     await expect(practiceFormPage.verifyDetails(page)).toContainText(studentData.firstName);
@@ -32,10 +29,10 @@ test('Successful Registration', async ({ page }) => {
     await expect(practiceFormPage.verifyDetails(page)).toContainText(studentData.email);
     await expect(practiceFormPage.verifyDetails(page)).toContainText(studentData.mobile);
     await expect(practiceFormPage.verifyDetails(page)).toContainText(studentData.address);
-
+    await expect(practiceFormPage.verifyDetails(page)).toContainText(studentData.subjects);
 });
 
-test('should display validation when mandatory fields are missing', async ({ page }) => {
+test('Should display validation when mandatory fields are missing', async ({ page }) => {
     await page.goto('/forms');
     await homePageLocators.practiceForm(page).click();
     await expect(practiceFormPage.formHeading(page)

@@ -7,5 +7,7 @@ export const studentData = {
   gender: 'Female' as const,
   hobby: 'Sports' as const,
   state: 'NCR',
-  city: 'Delhi'
+  city: 'Delhi',
+  dob: '01 Jan 1990',
+  subjects: 'Maths' as const,
 };

@@ -33,19 +33,11 @@ npx playwright install
 
 Run all tests:
 
-npm test
-
-Run tests in headed mode:
-
-npm run test:headed
-
-Run tests in debug mode:
-
-npm run test:debug
+npx playwright test 
 
 View HTML report:
 
-npm run report
+npx playwright show-report
 
 ## Framework Structure
 
