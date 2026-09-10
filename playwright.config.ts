@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+dotenv.config();
 //import process from 'process';
 
 /**
@@ -16,12 +18,12 @@ export default defineConfig({
   testDir: './tests',
   timeout: 120000, // 2 minutes
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
  // forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   //retries: process.env.CI ? 3 : 3,
-  retries: 3,
+  retries: 0,
   /* Opt out of parallel tests on CI. */
  // workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -29,12 +31,17 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
-    baseURL: 'https://demoqa.com',
+     baseURL: 'https://restful-booker.herokuapp.com',
+    //baseURL: 'https://demoqa.com',
+    
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     headless: false,
+     extraHTTPHeaders: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
   },
 
   /* Configure projects for major browsers */
