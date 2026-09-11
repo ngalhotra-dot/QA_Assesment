@@ -1,16 +1,43 @@
-export const studentData = {
-  firstName: 'Neha',
-  lastName: 'Tester',
-  email: 'neha.tester@example.com',
-  mobile: '9876543210',
-  address: 'Gurgaon',
-  gender: 'Female' as const,
-  hobby: 'Sports' as const,
-  state: 'NCR',
-  city: 'Delhi',
-  dob: '01 Jan 1990',
-  subjects: 'Maths' as const,
+export const studentData = [
+  {
+    firstName: 'Neha',
+    lastName: 'Tester',
+    email: 'neha.tester@example.com',
+    mobile: '9876543210',
+    address: 'Gurgaon',
+    gender: 'Female' as const,
+    hobby: 'Sports' as const,
+    state: 'NCR',
+    city: 'Delhi',
+    dob: '01 Jan 1990',
+    subjects: 'Maths' as const,
+  },
 
- 
+  {
+    firstName: 'Rahul',
+    lastName: 'Automation',
+    email: 'rahul.automation',
+    mobile: '9876543211',
+    address: 'Delhi',
+    gender: 'Female' as const,
+    hobby: 'Reading' as const,
+    state: 'NCR',
+    city: 'Delhi',
+    dob: '15 Feb 1992',
+    subjects: 'Physics' as const,
+  },
 
-};
+  {
+    firstName: 'Priya',
+    lastName: 'Testing',
+    email: 'priya.testing@example.com',
+    mobile: '9876543212',
+    address: 'Noida',
+    gender: 'Female' as const,
+    hobby: 'Music' as const,
+    state: 'NCR',
+    city: 'Delhi',
+    dob: '20 Mar 1991',
+    subjects: 'Chemistry' as const,
+  },
+];
